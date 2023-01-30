@@ -20,4 +20,14 @@ public class Buffer {
     }
     return "Element not found.";
   }
+  
+  
+  public int findEmptySpace() {
+	    for (int i = 0; i < size; i++) {
+	        if (i >= elements.size() || elements.get(i) == null) {
+	            return i;
+	        }
+	    }
+	    return -1;
+	}
 }
