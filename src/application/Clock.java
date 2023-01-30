@@ -23,6 +23,10 @@ public class Clock extends Buffer2 {
 	
 	@Override
 	public boolean add(String element) {
+		if (elements.contains(element)) {
+			flags.set(elements.indexOf(element), 1);
+			return true;
+		}
 		if (!hasEmptySpace()) {
 			int indexToReplace = getClockIndex();
 			elements.set(indexToReplace, element);
