@@ -46,7 +46,7 @@ public class LRU extends Buffer2 {
 	}
 
 	public void printElementsWithAccessTime() {
-		for (int i = 0; i < elements.size(); i++) {
+		for (int i = 0; i < size; i++) {
 			System.out.println("Element : " + elements.get(i) + " Access Time : " + accessTime.get(i));
 		}
 	}
