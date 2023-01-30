@@ -30,30 +30,25 @@ public class main1 {
 		System.out.println("----------------------------------------------------------");
 				
 		FIFO fifo = new FIFO();
+		
 	    fifo.add("A");
 	    fifo.add("B");
 	    fifo.add("C");
 	    fifo.add("D");
-        
 	    
 	    fifo.add("E");
 	    
 	    System.out.println("Elements in the FIFO buffer: ");
 	    fifo.printElementsWithAccessTime();
-        
 		
 	    fifo.add("E");
-	    System.out.println("----------------------------------------------------------");
 	    
+	    System.out.println("Elements in the FIFO buffer: ");
 	    fifo.printElementsWithAccessTime();
-		FIFO cache2 = new FIFO();
-		
-		cache2.add("A");
-		cache2.add("B");
-		cache2.add("C");
-		cache2.add("D");
-	
-		cache2.add("");
+	    
+	    fifo.add("K");
+	    System.out.println("Elements in the FIFO buffer: ");
+	    fifo.printElementsWithAccessTime();
 
 		System.out.println("----------------------------------------------------------");
 		

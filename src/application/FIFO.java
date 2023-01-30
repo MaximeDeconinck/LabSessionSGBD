@@ -12,6 +12,9 @@ public class FIFO extends Buffer2 {
 
     @Override
     public boolean add(String element) {
+    	if (elements.contains(element)) {
+    		return true;
+    	}
         if (!hasEmptySpace()) {
             int indexToReplace = getFIFOIndex();
             elements.set(indexToReplace, element);
