@@ -2,12 +2,12 @@ package application;
 
 import java.util.ArrayList;
 
-public class Buffer2 {
+public class Buffer {
 	protected ArrayList<String> elements;
 	protected final int size = 4;
-	private int resourceNotFoundCounter = 0;
+	protected int ressourceNotFoundCounter = 0;
 
-	public Buffer2() {
+	public Buffer() {
 		this.elements = new ArrayList<>(size);
 	}
 
@@ -19,10 +19,14 @@ public class Buffer2 {
 		if (elements.contains(resource)) {
 			return "Element is there.";
 		}
-		resourceNotFoundCounter++;
+		ressourceNotFoundCounter++;
 		return "Element not found.";
 	}
-
+	
+	public int getNotFound() {
+		return ressourceNotFoundCounter;
+	}
+	
 	public int findEmptySpace() {
 		for (int i = 0; i < size; i++) {
 			if (i >= elements.size() || elements.get(i) == null) {

@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-public class Clock extends Buffer2 {
+public class Clock extends Buffer {
 	private ArrayList<Integer> flags;
 	private int clock = 0;
 
@@ -13,14 +13,14 @@ public class Clock extends Buffer2 {
 			this.flags.add(0);
 		}
 	}
-	
+
 	public void rotate() {
 		this.clock++;
 		if (this.clock == 4) {
 			this.clock = 0;
 		}
 	}
-	
+
 	@Override
 	public boolean add(String element) {
 		if (elements.contains(element)) {
@@ -38,7 +38,7 @@ public class Clock extends Buffer2 {
 		}
 		return true;
 	}
-	
+
 	@Override
 	public String getResource(String resource) {
 		int index = elements.indexOf(resource);
@@ -46,9 +46,10 @@ public class Clock extends Buffer2 {
 			flags.set(index, 1);
 			return "Element is there.";
 		}
+		ressourceNotFoundCounter++;
 		return "Element not found.";
 	}
-	
+
 	public int getClockIndex() {
 		int index;
 		while (true) {
@@ -62,13 +63,13 @@ public class Clock extends Buffer2 {
 		}
 		return index;
 	}
-	
+
 	public void printElements() {
 		for (int i = 0; i < size; i++) {
 			System.out.println("Element : " + elements.get(i));
 		}
 	}
-	
+
 	public void printFlags() {
 		for (int i = 0; i < size; i++) {
 			System.out.println(flags.get(i));

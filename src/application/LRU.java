@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-public class LRU extends Buffer2 {
+public class LRU extends Buffer {
 	protected ArrayList<Long> accessTime;
 
 	public LRU() {
@@ -30,6 +30,7 @@ public class LRU extends Buffer2 {
 			accessTime.set(index, System.currentTimeMillis());
 			return "Element is there.";
 		}
+		ressourceNotFoundCounter++;
 		return "Element not found.";
 	}
 
@@ -50,7 +51,5 @@ public class LRU extends Buffer2 {
 			System.out.println("Element : " + elements.get(i) + " Access Time : " + accessTime.get(i));
 		}
 	}
-	
-	
 
 }
