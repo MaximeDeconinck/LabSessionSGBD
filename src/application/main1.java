@@ -7,11 +7,7 @@ public class main1 {
 		LRU cache = new LRU();
 
 		cache.add("A");
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> 2735d59a7916519e6c35bcbba0becb7feb9d6a7b
 		cache.add("B");
 
 		cache.add("C");
@@ -32,9 +28,7 @@ public class main1 {
 	
 		
 		System.out.println("----------------------------------------------------------");
-		
-<<<<<<< HEAD
-		
+				
 		FIFO fifo = new FIFO();
 	    fifo.add("A");
 	    fifo.add("B");
@@ -52,7 +46,6 @@ public class main1 {
 	    System.out.println("----------------------------------------------------------");
 	    
 	    fifo.printElementsWithAccessTime();
-=======
 		FIFO cache2 = new FIFO();
 		
 		cache2.add("A");
@@ -63,7 +56,6 @@ public class main1 {
 		cache2.add("");
 
 		System.out.println("----------------------------------------------------------");
->>>>>>> 2735d59a7916519e6c35bcbba0becb7feb9d6a7b
 		
 		Clock cache3 = new Clock();
 		

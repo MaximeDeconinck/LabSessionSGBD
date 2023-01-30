@@ -23,7 +23,6 @@ public class FIFO extends Buffer2 {
         return true;
     }
 
-<<<<<<< HEAD
     private int getFIFOIndex() {
         long oldestEntryTime = Long.MAX_VALUE;
         int oldestIndex = -1;
@@ -41,17 +40,4 @@ public class FIFO extends Buffer2 {
             System.out.println(elements.get(i) + " | " + entryTime.get(i));
         }
     }
-=======
-	private int getFIFOIndex() {
-		long oldestEntryTime = Long.MAX_VALUE;
-		int oldestIndex = -1;
-		for (int i = 0; i < elements.size(); i++) {
-			if (entryTime.get(i) < oldestEntryTime) {
-				oldestEntryTime = entryTime.get(i);
-				oldestIndex = i;
-			}
-		}
-		return oldestIndex;
-	}
->>>>>>> 2735d59a7916519e6c35bcbba0becb7feb9d6a7b
 }
