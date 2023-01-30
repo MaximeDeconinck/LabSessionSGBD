@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Buffer2 {
   private ArrayList<String> elements;
   private final int size = 4;
+  private int resourceNotFoundCounter = 0;
 
   public Buffer2() {
     this.elements = new ArrayList<>(size);
@@ -18,6 +19,7 @@ public class Buffer2 {
     if (elements.contains(resource)) {
       return "Element is there.";
     }
+    resourceNotFoundCounter++;
     return "Element not found.";
   }
   
