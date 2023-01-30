@@ -33,7 +33,7 @@ public class Buffer2 {
 	    return -1;
 	}
   
-  public boolean add(String element) {
+  public boolean add(String element) throws InterruptedException {
 	    if (!hasEmptySpace()) {
 	        return false;
 	    }

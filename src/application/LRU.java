@@ -11,15 +11,18 @@ public class LRU extends Buffer2 {
   }
 
   @Override
-  public boolean add(String element) {
+  public boolean add(String element) throws InterruptedException {
     if (!hasEmptySpace()) {
       int indexToReplace = getLRUIndex();
       elements.set(indexToReplace, element);
       accessTime.set(indexToReplace, System.currentTimeMillis());
+     
     } else {
       elements.add(element);
       accessTime.add(System.currentTimeMillis());
+      
     }
+    
     return true;
   }
 
@@ -44,4 +47,12 @@ public class LRU extends Buffer2 {
     }
     return oldestIndex;
   }
+  
+  public void printElementsWithAccessTime() {
+	    for (int i = 0; i < elements.size(); i++) {
+	      System.out.println("Element : " + elements.get(i) + " Access Time : " + accessTime.get(i));
+	    }
+	}
+  
+  
 }
