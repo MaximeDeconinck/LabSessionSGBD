@@ -7,12 +7,15 @@ public class main1 {
 		LRU cache = new LRU();
 
 		cache.add("A");
+		
 
 		cache.add("B");
 
 		cache.add("C");
 
 		cache.add("D");
+		
+		cache.printElementsWithAccessTime();
 
 		System.out.println(cache.getResource("A")); // renvoie "Element is there."
 
@@ -24,8 +27,21 @@ public class main1 {
 		System.out.println(cache.getResource("E")); // renvoie "Element is there."
 
 		cache.add("K");
-
 		cache.printElementsWithAccessTime();
+		
+		System.out.println("----------------------------------------------------------");
+		
+		
+		FIFO cache2 = new FIFO();
+		
+		cache2.add("A");
+		cache2.add("B");
+		cache2.add("C");
+		cache2.add("D");
+	
+		cache2.add("");
+
+		
 	}
 
 }
