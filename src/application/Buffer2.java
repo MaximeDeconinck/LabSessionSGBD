@@ -3,8 +3,8 @@ package application;
 import java.util.ArrayList;
 
 public class Buffer2 {
-  private ArrayList<String> elements;
-  private final int size = 4;
+  protected ArrayList<String> elements;
+  protected final int size = 4;
   private int resourceNotFoundCounter = 0;
 
   public Buffer2() {

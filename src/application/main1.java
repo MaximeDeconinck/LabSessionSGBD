@@ -1,15 +1,26 @@
 package application;
 
-import application.Buffer;
+
 
 public class main1 {
 
 	public static void main(String[] args) {
 		
-		Buffer buffer = new Buffer();
 		
-		System.out.println(buffer.tab[0]);
-		
+		LRU cache = new LRU();
+
+		cache.add("A");
+		cache.add("B");
+		cache.add("C");
+		cache.add("D");
+
+		System.out.println(cache.getResource("A")); // renvoie "Element is there."
+		System.out.println(cache.getResource("E")); // renvoie "Element not found."
+
+		cache.add("E");
+
+		System.out.println(cache.getResource("B")); // renvoie "Element not found."
+		System.out.println(cache.getResource("E")); // renvoie "Element is there."
 	}
 
 }
