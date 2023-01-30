@@ -7,7 +7,6 @@ public class main1 {
 		LRU cache = new LRU();
 
 		cache.add("A");
-		
 
 		cache.add("B");
 
@@ -31,7 +30,6 @@ public class main1 {
 		
 		System.out.println("----------------------------------------------------------");
 		
-		
 		FIFO cache2 = new FIFO();
 		
 		cache2.add("A");
@@ -41,7 +39,22 @@ public class main1 {
 	
 		cache2.add("");
 
+		System.out.println("----------------------------------------------------------");
 		
+		Clock cache3 = new Clock();
+		
+		cache3.add("A");
+		cache3.add("B");
+		cache3.add("C");
+		cache3.add("D");
+		
+		cache3.printElements();
+		cache3.printFlags();
+		
+		cache3.add("E");
+		
+		cache3.printElements();
+		cache3.printFlags();
 	}
 
 }

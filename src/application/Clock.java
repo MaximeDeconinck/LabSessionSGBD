@@ -10,7 +10,7 @@ public class Clock extends Buffer2 {
 		super();
 		this.flags = new ArrayList<>(size);
 		for (int i = 0; i < size; i++) {
-			this.flags.set(i, 0);
+			this.flags.add(0);
 		}
 	}
 	
@@ -28,8 +28,9 @@ public class Clock extends Buffer2 {
 			elements.set(indexToReplace, element);
 			flags.set(indexToReplace, 1);
 		} else {
-			elements.add(element);
-			flags.set(flags.indexOf(element), 1);
+			int index = findEmptySpace();
+			elements.add(index, element);
+			flags.set(index, 1);
 		}
 		return true;
 	}
@@ -49,12 +50,24 @@ public class Clock extends Buffer2 {
 		while (true) {
 			if (this.flags.get(clock) == 1) {
 				this.flags.set(clock, 0);
-				clock++;
+				rotate();
 			} else {
 				index = clock;
 				break;
 			}
 		}
 		return index;
+	}
+	
+	public void printElements() {
+		for (int i = 0; i < size; i++) {
+			System.out.println("Element : " + elements.get(i));
+		}
+	}
+	
+	public void printFlags() {
+		for (int i = 0; i < size; i++) {
+			System.out.println(flags.get(i));
+		}
 	}
 }

@@ -23,14 +23,15 @@ public class FIFO extends LRU {
 		return true;
 	}
 
-private int getFIFOIndex() {
-	long oldestEntryTime = Long.MAX_VALUE;
-	int oldestIndex = -1;
-	for (int i = 0; i < elements.size(); i++) {
-		if (entryTime.get(i) < oldestEntryTime) {
-			oldestEntryTime = entryTime.get(i);
-			oldestIndex = i;
+	private int getFIFOIndex() {
+		long oldestEntryTime = Long.MAX_VALUE;
+		int oldestIndex = -1;
+		for (int i = 0; i < elements.size(); i++) {
+			if (entryTime.get(i) < oldestEntryTime) {
+				oldestEntryTime = entryTime.get(i);
+				oldestIndex = i;
+			}
 		}
+		return oldestIndex;
 	}
-	return oldestIndex;
-}}
+}
