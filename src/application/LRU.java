@@ -3,7 +3,7 @@ package application;
 import java.util.ArrayList;
 
 public class LRU extends Buffer2 {
-	private ArrayList<Long> accessTime;
+	protected ArrayList<Long> accessTime;
 
 	public LRU() {
 		super();
@@ -50,5 +50,7 @@ public class LRU extends Buffer2 {
 			System.out.println("Element : " + elements.get(i) + " Access Time : " + accessTime.get(i));
 		}
 	}
+	
+	
 
 }

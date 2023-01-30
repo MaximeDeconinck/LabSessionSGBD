@@ -8,15 +8,13 @@ public class main1 {
 
 		cache.add("A");
 		
-
 		cache.add("B");
 
 		cache.add("C");
 
 		cache.add("D");
 		
-		cache.printElementsWithAccessTime();
-
+		
 		System.out.println(cache.getResource("A")); // renvoie "Element is there."
 
 		System.out.println(cache.getResource("E")); // renvoie "Element not found."
@@ -27,20 +25,28 @@ public class main1 {
 		System.out.println(cache.getResource("E")); // renvoie "Element is there."
 
 		cache.add("K");
-		cache.printElementsWithAccessTime();
+	
 		
 		System.out.println("----------------------------------------------------------");
 		
 		
-		FIFO cache2 = new FIFO();
+		FIFO fifo = new FIFO();
+	    fifo.add("A");
+	    fifo.add("B");
+	    fifo.add("C");
+	    fifo.add("D");
+        
+	    
+	    fifo.add("E");
+	    
+	    System.out.println("Elements in the FIFO buffer: ");
+	    fifo.printElementsWithAccessTime();
+        
 		
-		cache2.add("A");
-		cache2.add("B");
-		cache2.add("C");
-		cache2.add("D");
-	
-		cache2.add("");
-
+	    fifo.add("E");
+	    System.out.println("----------------------------------------------------------");
+	    
+	    fifo.printElementsWithAccessTime();
 		
 	}
 
