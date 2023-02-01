@@ -1,82 +1,49 @@
 package application;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class main1 {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		LRU cache = new LRU();
-
-		cache.add("A");
-
-		cache.add("B");
-
-		cache.add("C");
-
-		cache.add("D");
-
-		System.out.println(cache.getResource("A")); // renvoie "Element is there."
-
-		System.out.println(cache.getResource("E")); // renvoie "Element not found."
-
-		cache.add("E");
-
-		System.out.println(cache.getResource("B")); // renvoie "Element not found."
-		System.out.println(cache.getResource("E")); // renvoie "Element is there."
-
-		cache.add("K");
+	
+		List<String> elements = Arrays.asList("A", "B", "C", "D", "E", "A", "B", "C", "D", "E");
+		System.out.println("scenario: "+ elements);
+		runScenario(elements);
 		
-		System.out.println(cache.getNotFound());
-
-		System.out.println("----------------------------------------------------------");
-
-		FIFO fifo = new FIFO();
-
-		fifo.add("A");
-		fifo.add("B");
-		fifo.add("C");
-		fifo.add("D");
-		
-		fifo.getResource("K");
-		
-		fifo.add("E");
-
-		System.out.println("Elements in the FIFO buffer: ");
-		fifo.printElementsWithAccessTime();
-
-		fifo.add("E");
-		System.out.println("Elements in the FIFO buffer: ");
-		fifo.printElementsWithAccessTime();
-
-		fifo.add("K");
-		System.out.println("Elements in the FIFO buffer: ");
-		fifo.printElementsWithAccessTime();
-
-		fifo.add("K");
-		System.out.println("Elements in the FIFO buffer: ");
-		fifo.printElementsWithAccessTime();
-		
-		System.out.println(fifo.getNotFound());
-
-		System.out.println("----------------------------------------------------------");
-
-		Clock clock = new Clock();
-
-		clock.add("A");
-		clock.add("B");
-		clock.add("C");
-		clock.add("D");
-		
-		clock.getResource("K");
-
-		clock.printElements();
-		clock.printFlags();
-
-		clock.add("E");
-
-		clock.printElements();
-		clock.printFlags();
-		
-		System.out.println(clock.getNotFound());
 	}
+	
+	static void runScenario(List<String> elements) throws InterruptedException {
+		
+	    Clock clock = new Clock();
+	    LRU lru = new LRU();
+	    FIFO fifo = new FIFO();
+	    
+	    for (int i = 0; i < elements.size(); i++) {
+	        String element = elements.get(i);
+	        
+	        
+	        if (i >= 3) {
+	            fifo.getResource(element);
+	            lru.getResource(element);
+	            clock.getResource(element);
+	        }
+	        
+	        clock.add(element);
+	        lru.add(element);
+	        fifo.add(element);
+	      
+	    }
+
+	    	    
+	    System.out.println("clock resultat : " +clock.getNotFound());
+	    System.out.println("lru resultat : " +lru.getNotFound());
+	    System.out.println("fifo resultat : " +fifo.getNotFound());
+	}
+
+
+
+	
 	
 }
