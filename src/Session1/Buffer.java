@@ -1,4 +1,4 @@
-package application;
+package Session1;
 
 import java.util.ArrayList;
 
@@ -43,5 +43,11 @@ public class Buffer {
 		int index = findEmptySpace();
 		elements.add(index, element);
 		return true;
+	}
+	
+	public void printElements() {
+		for (int i = 0; i < size; i++) {
+			System.out.println("Element : " + elements.get(i));
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package application;
+package Session1;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,8 +35,16 @@ public class main1 {
 	        fifo.add(element);
 	      
 	    }
-
-	    	    
+	    
+	    /*
+	    System.out.println("clock buffer : ");
+	    clock.printElements();
+	    System.out.println("lru buffer : ");
+	    lru.printElements();
+	    System.out.println("fifo buffer : ");
+	    fifo.printElements();
+	    */w
+	    
 	    System.out.println("clock resultat : " +clock.getNotFound());
 	    System.out.println("lru resultat : " +lru.getNotFound());
 	    System.out.println("fifo resultat : " +fifo.getNotFound());
